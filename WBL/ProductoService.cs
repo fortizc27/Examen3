@@ -8,7 +8,17 @@ using Entity;
 
 namespace WBL
 {
-    class ProductoService
+    interface IProductoService
+    {
+        Task<DBEntity> Create(ProductoEntity entity);
+        Task<DBEntity> Delete(ProductoEntity entity);
+        Task<IEnumerable<ProductoEntity>> Get();
+        Task<ProductoEntity> GetById(ProductoEntity entity);
+        Task<IEnumerable<ProductoEntity>> GetLista();
+        Task<DBEntity> Update(ProductoEntity entity);
+    }
+
+    class ProductoService : IProductoService
     {
         private readonly IDataAccess sql;
 
