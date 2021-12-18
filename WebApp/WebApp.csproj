@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\App\Cliente\Edit.ts" />
+    <Content Remove="wwwroot\App\Cliente\Grid.ts" />
+    <Content Remove="wwwroot\App\Compra\Edit.ts" />
+    <Content Remove="wwwroot\App\Compra\Grid.ts" />
+    <Content Remove="wwwroot\App\Producto\Edit.ts" />
+    <Content Remove="wwwroot\App\Producto\Grid.ts" />
     <Content Remove="wwwroot\Assets\Plugin\axios\AxiosConfig.ts" />
   </ItemGroup>
 
@@ -21,12 +27,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\App\Cliente\Grid.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\App\Compra\Edit.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\App\Compra\Grid.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="wwwroot\App\Producto\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Producto\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\Assets\Plugin\axios\AxiosConfig.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\App\" />
-    <Folder Include="wwwroot\App\" />
   </ItemGroup>
 
 </Project>
