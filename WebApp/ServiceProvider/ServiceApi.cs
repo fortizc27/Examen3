@@ -17,6 +17,10 @@ namespace WebApp
         }
 
 
+        /******************************************************************************************************
+        PRODUCTO
+       ******************************************************************************************************/
+
         public async Task<IEnumerable<ProductoEntity>> ProductoGet()
         {
 
@@ -25,7 +29,6 @@ namespace WebApp
 
         }
 
-
         public async Task<ProductoEntity> ProductoGetById(int id)
         {
             var result = await client.ServicioGetAsync<ProductoEntity>("api/Producto/" + id);
@@ -33,7 +36,64 @@ namespace WebApp
             if (result.CodeError is not 0) throw new Exception(result.MsgError);
 
             return result;
+        }
 
+        public async Task<IEnumerable<ProductoEntity>> ProductoGetLista()
+        {
+
+            var result = await client.ServicioGetAsync<IEnumerable<ProductoEntity>>("api/Producto/Lista");
+            return result;
+
+        }
+
+
+        /******************************************************************************************************
+        CLIENTE
+        ******************************************************************************************************/
+        public async Task<IEnumerable<ClientesEntity>> ClienteGet()
+        {
+
+            var result = await client.ServicioGetAsync<IEnumerable<ClientesEntity>>("api/Cliente");
+            return result;
+
+        }
+
+        public async Task<ClientesEntity> ClienteGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<ClientesEntity>("api/Cliente/" + id);
+
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+
+            return result;
+        }
+
+
+        public async Task<IEnumerable<ClientesEntity>>ClienteGetLista()
+        {
+
+            var result = await client.ServicioGetAsync<IEnumerable<ClientesEntity>>("api/Cliente/Lista");
+            return result;
+
+        }
+
+        /******************************************************************************************************
+        COMPRA
+        ******************************************************************************************************/
+        public async Task<IEnumerable<CompraEntity>> CompraGet()
+        {
+
+            var result = await client.ServicioGetAsync<IEnumerable<CompraEntity>>("api/Compra");
+            return result;
+
+        }
+
+        public async Task<CompraEntity> CompraGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<CompraEntity>("api/Compra/" + id);
+
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+
+            return result;
         }
     }
 }
