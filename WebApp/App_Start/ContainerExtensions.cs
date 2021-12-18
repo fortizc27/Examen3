@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BD;
+using WBL;
 
 
 
@@ -16,7 +17,9 @@ namespace WebApp
         {
 
             services.AddSingleton<IDataAccess, DataAccess>();
-            
+            services.AddTransient<ICompraService, CompraService>();
+            //services.AddTransient<IProductoService, ProductoService>();
+            //services.AddTransient<IClienteService, ClienteService>();
             return services;
         }
     }
