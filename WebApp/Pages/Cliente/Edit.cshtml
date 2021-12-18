@@ -12,11 +12,15 @@
             <form id="FormEdit" method="post">
                 <input type="hidden" asp-for="Entity.ClientesId" v-model="Entity.ClientesId" />
 
-                <div class="form-group mb-3">
+                @*<div class="form-group mb-3">
                     <label for="Entity.NombreCompleto" class="form-label">NombreCompleto:</label>
                     <select asp-for="Entity.ClientesId" class="form-select" v-model="Entity.ClientesId"
                             asp-items="@(new SelectList(Model.ClientesLista, "ClientesId", "NombreCompleto"))" required>
                     </select>
+                </div>*@
+                <div class="form-group mb-3">
+                    <label for="Entity.NombreCompleto" class="form-label">Nombre Completo:</label>
+                    <input type="text" class="form-control" asp-for="Entity.NombreCompleto" v-model="Entity.NombreCompleto" maxlength="500" required />
                 </div>
 
                 <div class="form-group mb-3">
@@ -28,7 +32,7 @@
                     <label for="Entity.Telefono" class="form-label">Telefono:</label>
                     <input type="text" class="form-control" asp-for="Entity.Telefono" v-model="Entity.Telefono" required />
                 </div>
-      
+
                 <div class="form-group mb-3">
                     <label for="Entity.Estado" class="form-label">Estado:</label>
                     <input type="checkbox" class="form-check-input" asp-for="Entity.Estado" v-model="Entity.Estado" />

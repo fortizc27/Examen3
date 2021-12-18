@@ -20,7 +20,7 @@ namespace WebApp.Pages.Cliente
 
         [BindProperty]
         public ClientesEntity Entity { get; set; } = new ClientesEntity();
-        public IEnumerable<ClientesEntity> ClientesLista { get; set; } = new List<ClientesEntity>();
+        //public IEnumerable<ClientesEntity> ClientesLista { get; set; } = new List<ClientesEntity>();
        
 
         [BindProperty(SupportsGet = true)]
@@ -35,7 +35,7 @@ namespace WebApp.Pages.Cliente
                     Entity = await service.ClienteGetById(id.Value);
                 }
 
-                ClientesLista = await service.ClienteGetLista();
+                //ClientesLista = await service.ClienteGetLista();
                
 
                 return Page();
