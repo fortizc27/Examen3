@@ -14,8 +14,8 @@
 
                 <div class="form-group mb-3">
                     <label for="Entity.NombreCompleto" class="form-label">Cliente:</label>
-                    <select asp-for="Entity.ClienteId" class="form-select" v-model="Entity.ClienteId"
-                            asp-items="@(new SelectList(Model.ClientesLista, "ClienteId", "NombreCompleto"))" required>
+                    <select asp-for="Entity.ClientesId" class="form-select" v-model="Entity.ClientesId"
+                            asp-items="@(new SelectList(Model.ClientesLista, "ClientesId", "NombreCompleto"))" required>
                     </select>
                 </div>
 
