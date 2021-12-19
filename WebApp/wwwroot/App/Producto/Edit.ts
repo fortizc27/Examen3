@@ -13,7 +13,7 @@
 
                 ClienteServicio(entity) {
                     console.log(entity);
-                    if (entity.IdEmpleado == null) {
+                    if (entity.ProductoId == null) {
                         return App.AxiosProvider.ProductoGuardar(entity);
 
                     } else {
