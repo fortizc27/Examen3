@@ -8,21 +8,31 @@ var ClienteEdit;
             Entity: Entity
         },
         methods: {
+            ClienteServicio: function (entity) {
+                console.log(entity);
+                if (entity.ClientesId == null) {
+                    return App.AxiosProvider.ClienteGuardar(entity);
+                }
+                else {
+                    return App.AxiosProvider.ClienteActualizar(entity);
+                }
+            },
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
-                    App.AxiosProvider.ClienteGuardar(this.Entity).then(function (data) {
+                    this.ClienteServicio(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
-                            Toast.fire({ title: "Registro almacenado.", icon: "success" }).then(function () { return window.location.href = "Cliente/Grid"; });
+                            Toast.fire({ title: "Se guardo correctamente", icon: "success" })
+                                .then(function () { return window.location.href = "Cliente/Grid"; });
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });
                         }
-                    });
+                    }).catch(function (c) { return console.log(c); });
                 }
                 else {
-                    Toast.fire({ title: "Campos obligatorios." });
+                    Toast.fire({ title: "Por favor complete los campos requeridos" });
                 }
             }
         },
