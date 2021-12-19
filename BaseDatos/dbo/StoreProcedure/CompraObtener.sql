@@ -13,10 +13,10 @@ AS BEGIN
 		,   A.Observaciones
 		,   A.Estado
 
-		,   A.ClientesId
+		,   C.ClientesId
 		,	C.NombreCompleto
 
-		,   A.ProductoId	
+		,   V.ProductoId	
 		,	V.Descripcion
 				
 

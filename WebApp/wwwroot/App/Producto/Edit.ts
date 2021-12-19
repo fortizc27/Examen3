@@ -11,9 +11,9 @@
 
             methods: {
 
-                ClienteServicio(entity) {
+                ProductoServicio(entity) {
                     console.log(entity);
-                    if (entity.IdEmpleado == null) {
+                    if (entity.ProductoId == null) {
                         return App.AxiosProvider.ProductoGuardar(entity);
 
                     } else {
@@ -27,7 +27,7 @@
                     if (BValidateData(this.Formulario)) {
                         Loading.fire("Guardando");
 
-                        this.ClienteServicio(this.Entity).then(data => {
+                        this.ProductoServicio(this.Entity).then(data => {
                             Loading.close();
 
                             if (data.CodeError == 0) {

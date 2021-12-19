@@ -47,6 +47,20 @@ namespace WebApiRest.Controllers
             }
         }
 
+        [HttpGet("Lista")]
+        public async Task<IEnumerable<ClientesEntity>> GetLista()
+        {
+            try
+            {
+                return await clienteService.GetLista();
+            }
+            catch (Exception ex)
+            {
+                //Returns an empty list 
+                return new List<ClientesEntity>();
+            }
+        }
+
         [HttpPost]
         public async Task<DBEntity> Create(ClientesEntity entity)
         {
